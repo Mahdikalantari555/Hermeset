@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "hermeset",
+  "main": "src/server.ts",
+  "compatibility_date": "2026-06-11",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "TELEGRAM_BOT_USERNAME": "hermeset_bot",
+    "TELEGRAM_ALLOWED_USER_ID": "0",
+    "OPENAI_COMPATIBLE_BASE_URL": "https://example.invalid/v1",
+    "OPENAI_COMPATIBLE_MODEL": "replace-me",
+    "APP_NAME": "hermeset"
+  },
+  "secrets": {
+    "required": [
+      "TELEGRAM_BOT_TOKEN",
+      "TELEGRAM_WEBHOOK_SECRET_TOKEN",
+      "OPENAI_COMPATIBLE_API_KEY"
+    ]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "HermesetAgent",
+        "class_name": "HermesetAgent"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["HermesetAgent"]
+    }
+  ]
+}
