@@ -1,0 +1,32 @@
+{
+  "name": "hermeset",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "telegram:register": "tsx scripts/register-telegram-webhook.ts",
+    "telegram:unregister": "tsx scripts/register-telegram-webhook.ts unregister"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "4.0.72",
+    "@chat-adapter/telegram": "4.41.0",
+    "@cloudflare/think": "0.19.0",
+    "agents": "0.24.0",
+    "ai": "7.0.109",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20260922.1",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vitest": "5.0.1",
+    "wrangler": "4.136.2"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
